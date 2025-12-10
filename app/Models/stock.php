@@ -12,9 +12,10 @@ class Stock extends Model
     protected $table = 'stocks';
 
     protected $fillable = [
-        'product_id',
-        'total_stok',
-    ];
+    'product_id',
+    'rak_id',
+    'stok'
+];
 
     public function product()
     {

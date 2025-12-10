@@ -27,13 +27,14 @@ class InboundController extends Controller
             'jumlah'     => 'required|integer|min:1',
         ]);
 
+        $product = Product::with('stock')->find($request->product_id);
+
         Inbound::create([
             'product_id' => $request->product_id,
             'rack_id'    => $request->rack_id,
             'jumlah'     => $request->jumlah,
+            'tanggal'    => $request->tanggal,
         ]);
-
-        $product = Product::with('stock')->find($request->product_id);
 
         if ($product->stock) {
             $product->stock->increment('stok', $request->jumlah);

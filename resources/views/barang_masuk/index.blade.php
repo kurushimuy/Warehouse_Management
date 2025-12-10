@@ -14,7 +14,7 @@
                     <label class="font-semibold">Produk</label>
                     <select name="product_id" class="w-full p-2 border rounded" required>
                         @foreach($products as $p)
-                            <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                            <option value="{{ $p->id }}">{{ $p->nama_produk }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -64,7 +64,7 @@
                 @foreach($incoming as $item)
                     <tr>    
                         <td class="p-3">{{ $item->tanggal }}</td>
-                        <td class="p-3">{{ $item->product->nama }}</td>
+                        <td class="p-3">{{ $item->product->nama_produk }}</td>
                         <td class="p-3">{{ $item->jumlah }}</td>
                         <td class="p-3">{{ $item->rak->kode_rak }}</td>
                     </tr>

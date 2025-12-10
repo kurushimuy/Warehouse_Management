@@ -10,7 +10,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->foreignId('rak_id')->nullable()->constrained('racks')->nullOnDelete();
-            $table->integer('qty')->default(0);
+            $table->integer('stok')->default(0);
             $table->timestamps();
         });
     }
