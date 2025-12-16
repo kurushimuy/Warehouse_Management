@@ -14,11 +14,12 @@ class Stock extends Model
     protected $fillable = [
     'product_id',
     'rak_id',
-    'stok'
+    'jumlah_stok'
 ];
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_id');
+        return $this->belongsTo(Product::class);
     }
+
 }

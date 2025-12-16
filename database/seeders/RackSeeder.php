@@ -11,18 +11,16 @@ class RackSeeder extends Seeder
     {
         $racks = [];
 
-        foreach (['A','B','C'] as $huruf) {
-            for ($i=1; $i<=6; $i++) {
+        foreach (['A', 'B', 'C'] as $row) {
+            for ($i = 1; $i <= 6; $i++) {
                 $racks[] = [
-                    'kode_rak' => $huruf . $i,
-                    'lokasi'   => 'Gudang ' . $huruf,
+                    'kode_rak' => $row . $i,
+                    'lokasi' => 'Gudang Utama',
                     'kapasitas' => 100,
                 ];
             }
         }
 
-        foreach ($racks as $r) {
-            Rack::create($r);
-        }
+        Rack::insert($racks);
     }
 }
